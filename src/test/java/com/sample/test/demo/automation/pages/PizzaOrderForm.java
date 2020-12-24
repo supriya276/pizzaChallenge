@@ -86,7 +86,6 @@ public class PizzaOrderForm extends TestBase {
 	/*
 	 * Select a pizza with Two Toppings - Param : pizza name , topping1,topping2
 	 */
-
 	public void selectPizza(String pizzaName, String toppings1, String toppings2) {
 		selectPizzaFromDropDown(pizzaName);
 		selectToppings1FromDropDown(toppings1);
@@ -96,14 +95,13 @@ public class PizzaOrderForm extends TestBase {
 	/*
 	 * method to calculate the cost of pizza param: Quantity price
 	 */
-
 	public void calculateCost(int quantity, double price) {
 		driver.findElement(By.id(pizza1Quantity)).sendKeys(String.valueOf(quantity));
 	}
+
 	/*
 	 * Method to Enter Pick UP Information param:Customar name ,Customer Phone
 	 */
-
 	public void enterPickUpInformation(String customerName, String customerPhone) {
 		driver.findElement(By.id(name)).sendKeys(customerName);
 		driver.findElement(By.id(phone)).sendKeys(customerPhone);
@@ -118,10 +116,10 @@ public class PizzaOrderForm extends TestBase {
 		driver.findElement(By.id(email)).sendKeys(customerEmail);
 		driver.findElement(By.id(phone)).sendKeys(customerPhone);
 	}
+
 	/*
 	 * Method to enter Payment Information Param :Payment Method
 	 */
-
 	public void selectPaymentInformation(String paymentMethod) {
 		if (paymentMethod.toUpperCase() == "CASH") {
 			driver.findElement(By.id(radioCash)).click();
@@ -139,10 +137,10 @@ public class PizzaOrderForm extends TestBase {
 		driver.findElement(By.id(placeOrderButton)).click();
 		driver.findElement(By.xpath(closeDialog)).click();
 	}
+
 	/*
 	 * Method to Place Order with Error
 	 */
-
 	public void placeOrderWithError() {
 		driver.findElement(By.id(placeOrderButton)).click();
 
@@ -184,10 +182,9 @@ public class PizzaOrderForm extends TestBase {
 	 * Method to select Toppings2 From DropDown Param: Toppings
 	 */
 	public void selectToppings2FromDropDown(String toppings) {
-WebElement toppings2DropDown = driver.findElement(By.xpath(pizza1Toppings2));
+		WebElement toppings2DropDown = driver.findElement(By.xpath(pizza1Toppings2));
 		toppings2DropDown.click();
 		Utilities.selectElement(toppings2DropDown, toppings);
 	}
 
 }
-
